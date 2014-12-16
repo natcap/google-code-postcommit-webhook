@@ -8,6 +8,11 @@ print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
 
 form = cgi.FieldStorage()
-print form["key1"].value
+with open('post_commit_hooks.txt', 'a') as f:
+	f.write(form)
+	f.write('\n')
+
+
+#print form["key1"].value
 #cgi.test()
 
