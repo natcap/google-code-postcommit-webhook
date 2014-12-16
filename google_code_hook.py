@@ -8,6 +8,6 @@ print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
 
 form = cgi.FieldStorage()
-print form["key1"]
+print form["key1"].value
 #cgi.test()
 
