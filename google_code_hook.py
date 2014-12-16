@@ -9,7 +9,7 @@ print                               # blank line, end of headers
 
 form = cgi.FieldStorage()
 with open('post_commit_hooks.txt', 'a') as f:
-	f.write(form)
+	f.write(str(form))
 	f.write('\n')
 
 
