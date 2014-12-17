@@ -7,8 +7,10 @@ import os
 
 cgitb.enable(display=0, logdir="/usr/local/natcap-webserver-data/post_commit_hook/cgi-bin/google-code-postcommit-webhook")
 
+print "HTTP/1.1 200 OK"
 print "Content-Type: text/html" # HTML is following
 print # blank line, end of headers
+print 'test'
 
 data = sys.stdin.read()
 
