@@ -4,6 +4,7 @@ import subprocess
 import json
 import sys
 import os
+import time
 
 cgitb.enable(display=0, logdir="/usr/local/natcap-webserver-data/post_commit_hook/cgi-bin/google-code-postcommit-webhook")
 
@@ -42,7 +43,8 @@ with open('post_commit_hooks.log', 'a') as f:
             f.flush()
             subprocess.call(
                 [os.path.join(repository_dir, "sync.sh")])
-            f.write("done\n")
+            f.write("done\n%s\n" % time.strftime("%c"))
+
     except Exception as e:
         f.write("Exception %s\n" % (str(e)))
         f.flush()
