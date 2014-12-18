@@ -34,7 +34,8 @@ with open('post_commit_hooks.log', 'a') as LOG_FILE:
                 ["hg", "up", "-C", "--repository", REPOSITORY_DIR],
                 stdout=NULL_FH, stderr=NULL_FH)
             subprocess.call(
-                [os.path.join(REPOSITORY_DIR, "sync.sh")])
+                [os.path.join(REPOSITORY_DIR, "sync.sh")],
+				stdout=NULL_FH, stderr=NULL_FH)
             LOG_FILE.write("[%s] successfuly updated\n" % time.strftime("%c"))
 
     except Exception as exception:
